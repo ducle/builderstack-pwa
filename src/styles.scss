@@ -1,1 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+	font-family: 'Avenirblack';
+    src: url('./assets/fonts/avenirblack.ttf');
+}
+@font-face {
+	font-family: 'Avenirbook';
+    src: url('./assets/fonts/avenirbook.otf');
+}
+@font-face {
+	font-family: 'Avenirheavy';
+    src: url('./assets/fonts/avenirheavy.otf');
+}
+@font-face {
+	font-family: 'Avenirmedium';
+    src: url('./assets/fonts/avenirmedium.otf');
+}
+@font-face {
+	font-family: 'Avenirnextmedium';
+    src: url('./assets/fonts/avenirnextmedium.ttf');
+}
+body {
+    font-family: 'Avenirbook';
+}
