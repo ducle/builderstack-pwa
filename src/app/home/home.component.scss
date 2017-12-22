@@ -1,3 +1,10 @@
+.container-app {
+  padding-top: 70px;
+  padding-bottom: 50px;
+  .container-header {
+    background-color: #eeeeee;
+  }
+}
 .header {
   height: 70px;
   text-align: center;
@@ -84,5 +91,15 @@
       font-size: 95%;
       text-align: center;
     }
+  }
+}
+.container-footer {
+  padding: 20px;
+  text-transform: uppercase;
+  background-color: #eeeeee;
+  img {
+    width: 40px;
+    height: 40px;
+    margin-right: 20px;
   }
 }
