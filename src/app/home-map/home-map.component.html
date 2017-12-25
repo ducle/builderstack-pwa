@@ -1,3 +1,49 @@
-<p>
-  home-map works!
-</p>
+<agm-map [latitude]="lat" [longitude]="lng">
+  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+</agm-map>
+<div class="container">
+  <div class="box-info">
+    <div class="box-info-address">
+      <span>
+        <img class="icon-map" src="assets/images/ic_new_location.png" />425 N Mapple Driver, New york NY 555555</span>
+    </div>
+    <div class="box-info-direction">
+      Get Direction
+    </div>
+
+  </div>
+  <div class="row box-attraction">
+    <div class="col-4 item p-0">
+      <img src="assets/images/ic_map_attraction_one.png" />
+      <p>Beverly hills</p>
+    </div>
+    <div class="col-4 item p-0">
+      <img src="assets/images/ic_map_attraction_two.png" />
+      <p>Wilshire & robertson</p>
+    </div>
+    <div class="col-4 item p-0">
+      <img src="assets/images/ic_map_attraction_three.png" />
+      <p>Sunshine springs</p>
+    </div>
+  </div>
+  <div class="row box-near-by">
+    <div class="col-7">
+      Nearby Schools
+      <p>Country Isles Elementary</p>
+      <p>Indian Ridge Middle</p>
+      <p>Western High</p>
+    </div>
+    <div class="col-2">
+      Grades
+      <p>K-5</p>
+      <p>6-8</p>
+      <p>9-12</p>
+    </div>
+    <div class="col-3">
+      Distance
+      <p>0.3 miles</p>
+      <p>0.8 miles</p>
+      <p>2 miles</p>
+    </div>
+  </div>
+</div>

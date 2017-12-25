@@ -1,0 +1,40 @@
+agm-map {
+  height: 200px;
+}
+.box-info {
+  position: relative;
+  border: 1px #efeefe solid;
+  color: black;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 10px;
+  background-color: #efeefe;
+  margin-top: -50px;
+  min-height: 80px;
+  .box-info-address {
+    text-align: center;
+    .icon-map {
+      margin-right: 5px;
+    }
+  }
+  .box-info-direction {
+    display: flex;
+    justify-content: center;
+  }
+}
+.box-attraction {
+  margin-top: 20px;
+  img {
+    width: 30px;
+    height: 30px;
+  }
+  .item {
+    text-transform: uppercase;
+    font-size: 60%;
+    text-align: center;
+    p {
+      margin-top: 7px;
+      color: gray;
+    }
+  }
+}

@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { AgmCoreModule } from '@agm/core';
 import { BoostrapModule } from './shared/boostrap.module';
 
 import { AppComponent } from './app.component';
@@ -12,8 +13,23 @@ import { HomeMapComponent } from './home-map/home-map.component';
 import { HomeContactComponent } from './home-contact/home-contact.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, HomePhotoComponent, HomeCardComponent, HomeFeaturesComponent, HomeMapComponent, HomeContactComponent],
-  imports: [BrowserModule, AppRoutingModule, BoostrapModule],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    HomePhotoComponent,
+    HomeCardComponent,
+    HomeFeaturesComponent,
+    HomeMapComponent,
+    HomeContactComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BoostrapModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDc_PsV4e99mtgskG8Da3dSW3P_faz7pu8'
+    })
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
