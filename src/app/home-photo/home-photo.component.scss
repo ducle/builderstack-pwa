@@ -1,0 +1,26 @@
+.box-info {
+  margin-top: 10px;
+  padding: 10px;
+  color: #eeeeee;
+  font-size: 80%;
+  .box-info-address {
+    text-align: center;
+    .icon-map {
+      margin-right: 5px;
+      height: 20px;
+    }
+  }
+  .box-first {
+    text-transform: uppercase;
+    border-bottom: 1px gray solid;
+  }
+  .item {
+    display: flex;
+    justify-content: center;
+  }
+}
+.box-gallery {
+  .item {
+    padding: 20px;
+  }
+}
