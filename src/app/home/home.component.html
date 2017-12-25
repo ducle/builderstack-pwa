@@ -6,16 +6,16 @@
       </h3>
     </div>
     <div class="row tab-menu">
-      <div class="col-3" (click)="activeTab = 'photo'">
+      <div class="col-3" [ngClass]="{'activeTab': activeTab === 'photo'}" (click)="activeTab = 'photo'">
         <span>Photos</span>
       </div>
-      <div class="col-3" (click)="activeTab = 'features'">
+      <div class="col-3" [ngClass]="{'activeTab': activeTab === 'features'}" (click)="activeTab = 'features'">
         <span>Features</span>
       </div>
-      <div class="col-3" (click)="activeTab = 'map'">
+      <div class="col-3" [ngClass]="{'activeTab': activeTab === 'map'}" (click)="activeTab = 'map'">
         <span>Map</span>
       </div>
-      <div class="col-3" (click)="activeTab = 'contact'">
+      <div class="col-3" [ngClass]="{'activeTab': activeTab === 'contact'}" (click)="activeTab = 'contact'">
         <span>Contact</span>
       </div>
     </div>
@@ -25,7 +25,7 @@
     <app-home-photo *ngIf="activeTab === 'photo'"></app-home-photo>
     <app-home-features *ngIf="activeTab === 'features'"></app-home-features>
     <app-home-map *ngIf="activeTab === 'map'"></app-home-map>
-    
+    <app-home-contact *ngIf="activeTab === 'contact'"></app-home-contact>
     <div class="fixed-bottom">
       <div class="schedule-footer">
         <h3>open house mon, Jun 12 at 3:00 PM</h3>

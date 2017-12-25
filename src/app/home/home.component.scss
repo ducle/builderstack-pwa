@@ -16,6 +16,9 @@
     font-family: 'Avenirheavy';
     margin-bottom: 5px;
   }
+  .activeTab {
+    border-bottom: 5px #f9307a solid;
+  }
 }
 .fixed-bottom .schedule-footer {
   color: #eeeeee;
@@ -32,7 +35,7 @@
   text-transform: uppercase;
   background-color: #eeeeee;
   height: 50px;
-
+  color: #697098;
   img {
     width: 30px;
     height: 30px;
