@@ -1,0 +1,29 @@
+.box-profile {
+  padding: 20px;
+  .image-avatar {
+    width: 90px;
+    height: 90px;
+  }
+  .box-profile-info {
+    .profile-name {
+      text-transform: uppercase;
+      font-family: 'Avenierheavy';
+      .agent {
+        border: 1px #f9307a solid;
+        font-size: 70%;
+        padding: 5px;
+        margin-left: 5px;
+      }
+    }
+    .icon {
+      width: 20px;
+      height: auto;
+      margin-right: 5px;
+    }
+  }
+}
+.button-send {
+  background-color: #f9307a;
+  color: #eeeeee;
+  text-transform: uppercase;
+}
