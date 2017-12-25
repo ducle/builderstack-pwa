@@ -1,0 +1,38 @@
+.box-info {
+  margin-top: 10px;
+  padding: 10px;
+  color: #eeeeee;
+  .box-info-address {
+    text-align: center;
+    .icon-map {
+      margin-right: 5px;
+      height: 20px;
+    }
+  }
+  .box-first {
+    text-transform: uppercase;
+    font-size: 80%;
+    border-bottom: 1px gray solid;
+  }
+  .item {
+    display: flex;
+    justify-content: center;
+  }
+}
+.box-attribute {
+  .item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 80%;
+    .box-attribute-info {
+      flex: 1;
+      margin-left: 3px;
+    }
+  }
+  img {
+    width: 30px;
+    height: 30px;
+  }
+}

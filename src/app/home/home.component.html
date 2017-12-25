@@ -1,32 +1,35 @@
 <div class="d-md-none container-app">
-  <div class="container-header fixed-top zindex-sticky">
-    <div class="container">
-      <!-- Content here -->
-      <div class="header" (click)="activeTab = 'card'">
-        <h3>
-          425 Mapple
-        </h3>
-      </div>
+  <div class="container-header fixed-top">
+    <div (click)="activeTab = 'card'">
+      <h3>
+        425 Mapple
+      </h3>
     </div>
-    <div class="tab-menu">
-      <div class="tab-menu-item" (click)="activeTab = 'photo'">
+    <div class="row tab-menu">
+      <div class="col-3" (click)="activeTab = 'photo'">
         <span>Photos</span>
       </div>
-      <div class="tab-menu-item" (click)="activeTab = 'features'">
+      <div class="col-3" (click)="activeTab = 'features'">
         <span>Features</span>
       </div>
-      <div class="tab-menu-item" (click)="activeTab = 'map'">
+      <div class="col-3" (click)="activeTab = 'map'">
         <span>Map</span>
       </div>
-      <div class="tab-menu-item" (click)="activeTab = 'contact'">
+      <div class="col-3" (click)="activeTab = 'contact'">
         <span>Contact</span>
       </div>
     </div>
   </div>
-  <app-home-card *ngIf="activeTab === 'card'"></app-home-card>
-  <app-home-photo *ngIf="activeTab === 'photo'"></app-home-photo>
-  <app-home-features *ngIf="activeTab === 'features'"></app-home-features>
-  <div class="container-footer fixed-bottom">
-    <img src="assets/images/ic_calendar.png">Schedule tour
+  <div class="content-body">
+    <app-home-card *ngIf="activeTab === 'card'"></app-home-card>
+    <app-home-photo *ngIf="activeTab === 'photo'"></app-home-photo>
+    <app-home-features *ngIf="activeTab === 'features'"></app-home-features>
+    <div class="fixed-bottom">
+      <div class="schedule-footer">
+        <h3>open house mon, Jun 12 at 3:00 PM</h3>
+      </div>
+      <div class="container-footer">
+        <img src="assets/images/ic_calendar.png">Schedule tour
+      </div>
+    </div>
   </div>
-</div>

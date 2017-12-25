@@ -1,66 +1,62 @@
 .box-price {
-    z-index: 100;
-    position: relative;
-    margin-top: -50px;
+  position: relative;
+  margin-top: -50px;
+  color: #eeeeee;
+  margin-left: 20px;
+}
+.box-info {
+  position: relative;
+  border: 1px #efeefe solid;
+  color: black;
+  min-height: 120px;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 10px;
+  background-color: #efeefe;
+  .box-info-address {
+    text-align: center;
+    .icon-map {
+      margin-right: 5px;
+    }
+  }
+  .box-info-feature {
+    display: block;
+    img {
+      width: 30px;
+      height: 30px;
+      margin-bottom: 10px;
+    }
+    .item {
+      position: relative;
+      display: flex;
+      font-size: 60%;
+      font-family: 'Avenirheavy';
+      flex-direction: column;
+      padding: 15px;
+      align-items: center;
+    }
+    .item:nth-child(1):after,
+    .item:nth-child(2):after,
+    .item:nth-child(3):after {
+      content: '';
+      height: 30%;
+      width: 1px;
+      position: absolute;
+      right: 0;
+      top: 30%;
+      background-color: gray;
+    }
+  }
+}
+.content-wrapper {
+  .box-description {
     color: #eeeeee;
-    margin-left: 20px;
-  }
-  .box-info {
-    display: flex;
-    position: relative;
-    flex: 1;
-    flex-direction: column;
-    border: 1px #efeefe solid;
-    min-height: 120px;
-    margin-left: 20px;
-    margin-right: 20px;
-    padding: 10px;
-    background-color: #efeefe;
-    .box-info-address {
+    padding: 20px;
+    h3 {
+      text-transform: uppercase;
+      font-family: 'Avenirheavy';
+      font-size: 95%;
       text-align: center;
-      .icon-map {
-        margin-right: 5px;
-      }
-    }
-    .box-info-feature {
-      display: block;
-      img {
-        width: 30px;
-        height: 30px;
-        margin-bottom: 10px;
-      }
-      .item {
-        position: relative;
-        display: flex;
-        font-size: 60%;
-        font-family: 'Avenirheavy';
-        flex-direction: column;
-        padding: 15px;
-        align-items: center;
-      }
-      .item:nth-child(1):after,
-      .item:nth-child(2):after,
-      .item:nth-child(3):after {
-        content: '';
-        height: 30%;
-        width: 1px;
-        position: absolute;
-        right: 0;
-        top: 30%;
-        background-color: gray;
-      }
     }
   }
-  .content-wrapper {
-    background-color: #262c47;
-    .box-description {
-      color: #eeeeee;
-      padding: 20px;
-      h3 {
-        text-transform: uppercase;
-        font-family: 'Avenirheavy';
-        font-size: 95%;
-        text-align: center;
-      }
-    }
-  }
+}
