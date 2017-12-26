@@ -12,9 +12,9 @@ export class HomeComponent implements OnInit {
   constructor(private cardService: CardService) {}
 
   ngOnInit() {
-    this.cardService.getCard().subscribe(response => {
-      console.log('response', response);
-    });
+    // this.cardService.getCard().subscribe(response => {
+    //   console.log('response', response);
+    // });
   }
   nextSection() {
     const index = arrayNavigation.findIndex(item => item === this.activeTab);
