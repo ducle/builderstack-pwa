@@ -1,25 +1,33 @@
 @font-face {
-	font-family: 'Avenirblack';
-    src: url('./assets/fonts/avenirblack.ttf');
+  font-family: 'Avenirblack';
+  src: url('./assets/fonts/avenirblack.ttf');
 }
 @font-face {
-	font-family: 'Avenirbook';
-    src: url('./assets/fonts/avenirbook.otf');
+  font-family: 'Avenirbook';
+  src: url('./assets/fonts/avenirbook.otf');
 }
 @font-face {
-	font-family: 'Avenirheavy';
-    src: url('./assets/fonts/avenirheavy.otf');
+  font-family: 'Avenirheavy';
+  src: url('./assets/fonts/avenirheavy.otf');
 }
 @font-face {
-	font-family: 'Avenirmedium';
-    src: url('./assets/fonts/avenirmedium.otf');
+  font-family: 'Avenirmedium';
+  src: url('./assets/fonts/avenirmedium.otf');
 }
 @font-face {
-	font-family: 'Avenirnextmedium';
-    src: url('./assets/fonts/avenirnextmedium.ttf');
+  font-family: 'Avenirnextmedium';
+  src: url('./assets/fonts/avenirnextmedium.ttf');
+}
+html,
+body {
+  position: fixed;
+  top: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
 }
 body {
-    font-family: 'Avenirbook';
-    background-color: #262C46;
-    color: #eeeeee;
+  font-family: 'Avenirbook';
+  background-color: #262c46;
+  color: #eeeeee;
 }
