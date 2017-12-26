@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AgmCoreModule } from '@agm/core';
 import { BoostrapModule } from './shared/boostrap.module';
+import { HttpClientModule } from '@angular/common/http';
+import { CardService } from './services/card.service';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -28,9 +30,10 @@ import { HomeContactComponent } from './home-contact/home-contact.component';
     BoostrapModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDc_PsV4e99mtgskG8Da3dSW3P_faz7pu8'
-    })
+    }),
+    HttpClientModule
   ],
-  providers: [],
+  providers: [CardService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

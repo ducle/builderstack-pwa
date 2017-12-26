@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CardService } from '../services/card.service';
 
 const arrayNavigation = ['card', 'photo', 'features', 'map', 'contact'];
 @Component({
@@ -8,9 +9,13 @@ const arrayNavigation = ['card', 'photo', 'features', 'map', 'contact'];
 })
 export class HomeComponent implements OnInit {
   activeTab = 'card';
-  constructor() {}
+  constructor(private cardService: CardService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.cardService.getCard().subscribe(response => {
+      console.log('response', response);
+    });
+  }
   nextSection() {
     const index = arrayNavigation.findIndex(item => item === this.activeTab);
     const nextIndex = arrayNavigation.length > index + 1 ? index + 1 : 0;
