@@ -5,9 +5,9 @@ const app = express();
 // in the dist directory
 const forceSSL = function() {
   return function(req, res, next) {
-    if (req.headers['x-forwarded-proto'] !== 'http') {
+    if (req.headers['x-forwarded-proto'] !== 'https') {
       return res.redirect(
-        ['http://', req.get('Host'), req.url].join('')
+        ['https://', req.get('Host'), req.url].join('')
       );
     }
     next();
@@ -17,7 +17,7 @@ const forceSSL = function() {
 // Instruct the app
 // to use the forceSSL
 // middleware
-// app.use(forceSSL());
+app.use(forceSSL());
 
 app.use(express.static(__dirname + '/dist'));
 // Start the app by listening on the default
