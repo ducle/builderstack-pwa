@@ -9,6 +9,7 @@ const arrayNavigation = ['card', 'photo', 'features', 'map', 'contact'];
 })
 export class HomeComponent implements OnInit {
   activeTab = 'card';
+  isShowGallery: Boolean = false;
   SWIPE_ACTION = { LEFT: 'swipeleft', RIGHT: 'swiperight' };
   constructor(private cardService: CardService) {}
 
@@ -27,10 +28,16 @@ export class HomeComponent implements OnInit {
   }
 
   swipe(action = this.SWIPE_ACTION.RIGHT) {
+    if (this.isShowGallery) {
+      return;
+    }
     if (action === 'swipedown') {
       this.navigatonSection();
     } else {
       this.navigatonSection(false);
     }
+  }
+  callShowGalerry(status) {
+    this.isShowGallery = status;
   }
 }

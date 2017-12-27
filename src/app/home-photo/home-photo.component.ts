@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 const imageArray = [
   'assets/images/one.jpg',
@@ -16,9 +16,17 @@ const imageArray = [
 export class HomePhotoComponent implements OnInit {
   images = imageArray;
   showGalerry: Boolean = false;
-  imageGalleryIndex: Number = 0;
+  imageGalleryIndex = 0;
   myInterval = 0;
+  @Output() callShowGalerry = new EventEmitter();
   constructor() {}
 
   ngOnInit() {}
+  swipe(type) {
+    if (type === 'swipeleft') {
+      this.imageGalleryIndex = this.imageGalleryIndex - 1 >= 0 ? this.imageGalleryIndex - 1 : imageArray.length - 1;
+    } else {
+      this.imageGalleryIndex = this.imageGalleryIndex + 1 >=  imageArray.length ? 0 : this.imageGalleryIndex + 1;
+    }
+  }
 }
