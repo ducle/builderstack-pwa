@@ -1,6 +1,6 @@
 <div class="d-md-none container-app">
   <div class="container-header fixed-top">
-    <div (click)="activeTab = 'card'">
+    <div (click)="activeTab = 0">
       <h3>
         425 Mapple
       </h3>
@@ -21,19 +21,19 @@
     </div>
   </div>
   <div class="content-body">
-    <div class="swiper-container" [swiper]="config"  [(index)]="activeTab">
+    <div class="swiper-container" [swiper]="config" [(index)]="activeTab">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
           <app-home-card class="fade"></app-home-card>
         </div>
         <div class="swiper-slide">
-          <app-home-photo (callShowGalerry)="callShowGalerry($event)" class="fade" ></app-home-photo>
+          <app-home-photo [images]="images" (callShowGalerry)="callShowGalerry($event)" class="fade"></app-home-photo>
         </div>
         <div class="swiper-slide">
           <app-home-features class="fade"></app-home-features>
         </div>
         <div class="swiper-slide">
-          <app-home-map class="fade" ></app-home-map>
+          <app-home-map class="fade"></app-home-map>
         </div>
         <div class="swiper-slide">
           <app-home-contact class="fade"></app-home-contact>
@@ -50,5 +50,19 @@
       </div>
     </div>
 
+  </div>
+  <div class="gallery-container" [ngClass]="{'d-none': !isShowGallery}">
+    <div class="clearfix">
+      <button type="button" class="close text-white btn-close" aria-label="Close" (click)="isShowGallery = false;">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="gallery-slider-container" (swipeleft)="swipe($event.type)" (swiperight)="swipe($event.type)">
+      <carousel [interval]="myInterval" class="gallery-slider" [(activeSlide)]="imageGalleryIndex">
+        <slide *ngFor="let image of images">
+          <img src={{image}} alt="Slide Image" style="display: block; width: 98%;">
+        </slide>
+      </carousel>
+    </div>
   </div>
 </div>

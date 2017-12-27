@@ -1,7 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { CardService } from '../services/card.service';
 
-const arrayNavigation = [ 0, 1, 2, 3, 4, 5];
+const arrayNavigation = [0, 1, 2, 3, 4, 5];
+const imageArray = [
+  'assets/images/one.jpg',
+  'assets/images/two.jpg',
+  'assets/images/three.jpg',
+  'assets/images/four.jpg',
+  'assets/images/five.jpg',
+  'assets/images/six.jpg'
+];
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -9,8 +17,10 @@ const arrayNavigation = [ 0, 1, 2, 3, 4, 5];
 })
 export class HomeComponent implements OnInit {
   activeTab = 0;
-  isShowGallery: Boolean = false;
+  isShowGallery = false;
   SWIPE_ACTION = { LEFT: 'swipeleft', RIGHT: 'swiperight' };
+  images = imageArray;
+  imageGalleryIndex = 0;
   constructor(private cardService: CardService) {}
 
   ngOnInit() {
@@ -26,18 +36,8 @@ export class HomeComponent implements OnInit {
     }
     this.activeTab = nextIndex;
   }
-
-  // swipe(action = this.SWIPE_ACTION.RIGHT) {
-  //   if (this.isShowGallery) {
-  //     return;
-  //   }
-  //   if (action === 'swipedown') {
-  //     this.navigatonSection();
-  //   } else {
-  //     this.navigatonSection(false);
-  //   }
-  // }
-  callShowGalerry(status) {
+  callShowGalerry({ status, index }) {
     this.isShowGallery = status;
+    this.imageGalleryIndex = index;
   }
 }
