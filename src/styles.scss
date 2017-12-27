@@ -18,6 +18,7 @@
   font-family: 'Avenirnextmedium';
   src: url('./assets/fonts/avenirnextmedium.ttf');
 }
+@import '~swiper/dist/css/swiper.min.css';
 html,
 body {
   position: fixed;
@@ -30,4 +31,7 @@ body {
   font-family: 'Avenirbook';
   background-color: #262c46;
   color: #eeeeee;
+}
+.swiper-container {
+  height: 100vh;
 }

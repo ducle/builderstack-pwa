@@ -8,6 +8,7 @@ import { CardService } from './services/card.service';
 
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
+import { SwiperModule, SWIPER_CONFIG, SwiperConfigInterface } from 'ngx-swiper-wrapper';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
@@ -23,6 +24,12 @@ export class MyHammerConfig extends HammerGestureConfig {
     swipe: { velocity: 0.4, threshold: 20, direction: Hammer.DIRECTION_ALL } // override default settings
   };
 }
+const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
+  direction: 'vertical',
+  slidesPerView: 'auto',
+  loop: true,
+  keyboard: true
+};
 
 @NgModule({
   declarations: [
@@ -42,13 +49,18 @@ export class MyHammerConfig extends HammerGestureConfig {
       apiKey: 'AIzaSyDc_PsV4e99mtgskG8Da3dSW3P_faz7pu8'
     }),
     HttpClientModule,
-    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
+    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
+    SwiperModule
   ],
   providers: [
     CardService,
     {
       provide: HAMMER_GESTURE_CONFIG,
       useClass: MyHammerConfig
+    },
+    {
+      provide: SWIPER_CONFIG,
+      useValue: DEFAULT_SWIPER_CONFIG
     }
   ],
   bootstrap: [AppComponent]

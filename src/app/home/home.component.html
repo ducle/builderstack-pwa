@@ -20,12 +20,26 @@
       </div>
     </div>
   </div>
-  <div class="content-body" (swipeup)="swipe($event.type)" (swipedown)="swipe($event.type)">
-    <app-home-card class="fade" [ngClass]="{'d-none': activeTab !== 'card'}"></app-home-card>
-    <app-home-photo (callShowGalerry)="callShowGalerry($event)" class="fade" [ngClass]="{'d-none': activeTab !== 'photo'}"></app-home-photo>
-    <app-home-features class="fade" [ngClass]="{'d-none': activeTab !== 'features'}"></app-home-features>
-    <app-home-map class="fade" [ngClass]="{'hide-map': activeTab !== 'map'}"></app-home-map>
-    <app-home-contact class="fade" [ngClass]="{'d-none': activeTab !== 'contact'}"></app-home-contact>
+  <div class="content-body">
+    <div class="swiper-container" [swiper]="config">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <app-home-card class="fade"></app-home-card>
+        </div>
+        <div class="swiper-slide">
+          <app-home-photo (callShowGalerry)="callShowGalerry($event)" class="fade" ></app-home-photo>
+        </div>
+        <div class="swiper-slide">
+          <app-home-features class="fade"></app-home-features>
+        </div>
+        <div class="swiper-slide">
+          <app-home-map class="fade" ></app-home-map>
+        </div>
+        <div class="swiper-slide">
+          <app-home-contact class="fade"></app-home-contact>
+        </div>
+      </div>
+    </div>
     <div class="fixed-bottom">
       <div class="schedule-footer">
         <h3>open house mon, Jun 12 at 3:00 PM</h3>
