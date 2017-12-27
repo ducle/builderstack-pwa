@@ -8,8 +8,8 @@
   "orientation": "portrait",
   "icons": [
     {
-      "src": "/assets/icons/ic_launcher-192x192.png",
-      "sizes": "192x192",
+      "src": "/assets/icons/stack-logo-512x.png",
+      "sizes": "512x512",
       "type": "image/png"
     }
   ]
