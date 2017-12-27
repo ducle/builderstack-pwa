@@ -1,11 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AgmCoreModule } from '@agm/core';
+import * as Hammer from 'hammerjs';
 import { BoostrapModule } from './shared/boostrap.module';
 import { HttpClientModule } from '@angular/common/http';
 import { CardService } from './services/card.service';
 
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
@@ -15,6 +17,13 @@ import { HomeFeaturesComponent } from './home-features/home-features.component';
 import { HomeMapComponent } from './home-map/home-map.component';
 import { HomeContactComponent } from './home-contact/home-contact.component';
 import { environment } from '../environments/environment';
+
+export class MyHammerConfig extends HammerGestureConfig {
+  overrides = <any>{
+    swipe: { velocity: 0.4, threshold: 20, direction: Hammer.DIRECTION_ALL } // override default settings
+  };
+}
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +44,13 @@ import { environment } from '../environments/environment';
     HttpClientModule,
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
   ],
-  providers: [CardService],
+  providers: [
+    CardService,
+    {
+      provide: HAMMER_GESTURE_CONFIG,
+      useClass: MyHammerConfig
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
