@@ -20,23 +20,22 @@
     </div>
   </div>
   <div class="row box-gallery">
-    <div class="col-6 item">
-      <img class="img-fluid" src="assets/images/one.jpg" />
+    <div class="col-6 item" *ngFor="let image of images; let index = index">
+      <img class="img-fluid" src={{image}} (click)="showGalerry = true; imageGalleryIndex = index" />
     </div>
-    <div class="col-6 item">
-      <img class="img-fluid" src="assets/images/two.jpg" />
+  </div>
+  <div class="gallery-container" [ngClass]="{'d-none': !showGalerry}">
+    <div class="clearfix">
+      <button type="button" class="close text-white btn-close" aria-label="Close" (click)="showGalerry = false">
+        <span aria-hidden="true">&times;</span>
+      </button>
     </div>
-    <div class="col-6 item">
-      <img class="img-fluid" src="assets/images/three.jpg" />
-    </div>
-    <div class="col-6 item">
-      <img class="img-fluid" src="assets/images/four.jpg" />
-    </div>
-    <div class="col-6 item">
-      <img class="img-fluid" src="assets/images/five.jpg" />
-    </div>
-    <div class="col-6 item">
-      <img class="img-fluid" src="assets/images/six.jpg" />
+    <div class="gallery-slider-container">
+      <carousel [interval]="myInterval" class="gallery-slider" [(activeSlide)]="imageGalleryIndex">
+        <slide *ngFor="let image of images">
+          <img src={{image}} alt="Slide Image" style="display: block; width: 98%;">
+        </slide>
+      </carousel>
     </div>
   </div>
 </div>
