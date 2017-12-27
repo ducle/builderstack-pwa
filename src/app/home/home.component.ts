@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit {
     this.activeTab = arrayNavigation[nextIndex];
   }
 
-  swipe(currentIndex: number, action = this.SWIPE_ACTION.RIGHT) {
+  swipe(action = this.SWIPE_ACTION.RIGHT) {
     if (action === 'swipedown') {
       this.navigatonSection();
     } else {

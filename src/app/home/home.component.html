@@ -20,7 +20,7 @@
       </div>
     </div>
   </div>
-  <div class="content-body" (swipeup)="swipe(idx, $event.type)" (swipedown)="swipe(idx, $event.type)">
+  <div class="content-body" (swipeup)="swipe($event.type)" (swipedown)="swipe($event.type)">
     <app-home-card class="fade" [ngClass]="{'d-none': activeTab !== 'card'}"></app-home-card>
     <app-home-photo class="fade" [ngClass]="{'d-none': activeTab !== 'photo'}"></app-home-photo>
     <app-home-features class="fade" [ngClass]="{'d-none': activeTab !== 'features'}"></app-home-features>
