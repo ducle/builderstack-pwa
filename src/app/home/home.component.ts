@@ -21,6 +21,7 @@ export class HomeComponent implements OnInit {
   SWIPE_ACTION = { LEFT: 'swipeleft', RIGHT: 'swiperight' };
   images = imageArray;
   imageGalleryIndex = 0;
+  config = null;
   constructor(private cardService: CardService) {}
 
   ngOnInit() {
@@ -39,5 +40,12 @@ export class HomeComponent implements OnInit {
   callShowGalerry({ status, index }) {
     this.isShowGallery = status;
     this.imageGalleryIndex = index;
+  }
+  swipe(type) {
+    if (type === 'swipeleft') {
+      this.imageGalleryIndex = this.imageGalleryIndex - 1 >= 0 ? this.imageGalleryIndex - 1 : imageArray.length - 1;
+    } else {
+      this.imageGalleryIndex = this.imageGalleryIndex + 1 >= imageArray.length ? 0 : this.imageGalleryIndex + 1;
+    }
   }
 }

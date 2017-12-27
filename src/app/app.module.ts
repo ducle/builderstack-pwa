@@ -26,9 +26,8 @@ export class MyHammerConfig extends HammerGestureConfig {
 }
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'vertical',
-  slidesPerView: 'auto',
-  loop: true,
-  keyboard: true
+  slidesPerView: 1,
+  loop: true
 };
 
 @NgModule({
