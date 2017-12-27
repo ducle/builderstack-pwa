@@ -21,7 +21,7 @@
   </div>
   <div class="row box-gallery">
     <div class="col-6 item" *ngFor="let image of images; let index = index">
-      <img class="img-fluid" src={{image}} (click)="showGalerry = true; imageGalleryIndex = index" />
+      <img class="img-fluid image-gallery" src={{image}} (click)="showGalerry = true; imageGalleryIndex = index" />
     </div>
   </div>
   <div class="gallery-container" [ngClass]="{'d-none': !showGalerry}">
