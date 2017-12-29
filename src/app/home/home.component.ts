@@ -48,4 +48,7 @@ export class HomeComponent implements OnInit {
       this.imageGalleryIndex = this.imageGalleryIndex + 1 >= imageArray.length ? 0 : this.imageGalleryIndex + 1;
     }
   }
+  changeIndexTab(event) {
+    this.activeTab = event;
+  }
 }

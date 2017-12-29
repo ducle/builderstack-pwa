@@ -21,7 +21,7 @@
     </div>
   </div>
   <div class="content-body">
-    <div class="swiper-container" [swiper]="config" [(index)]="activeTab">
+    <div class="swiper-container" [swiper]="config" (indexChange)="changeIndexTab($event)"  >
       <div class="swiper-wrapper">
         <div class="swiper-slide">
           <app-home-card class="fade"></app-home-card>
