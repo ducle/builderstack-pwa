@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { CardService } from '../services/card.service';
+import { SwiperDirective } from 'ngx-swiper-wrapper';
 
 const arrayNavigation = [0, 1, 2, 3, 4, 5];
 const imageArray = [
@@ -22,6 +23,7 @@ export class HomeComponent implements OnInit {
   images = imageArray;
   imageGalleryIndex = 0;
   config = null;
+  @ViewChild(SwiperDirective) directiveRef: SwiperDirective;
   constructor(private cardService: CardService) {}
 
   ngOnInit() {
@@ -50,5 +52,8 @@ export class HomeComponent implements OnInit {
   }
   changeIndexTab(event) {
     this.activeTab = event;
+  }
+  setIndexTab(index) {
+    this.directiveRef.setIndex(index);
   }
 }
