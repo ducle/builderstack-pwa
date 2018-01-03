@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import 'rxjs/add/operator/map';
 
 const API_URL = 'https://api-buildstacks.herokuapp.com/api/cards/';
 @Injectable()
