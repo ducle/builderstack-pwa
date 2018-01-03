@@ -38,6 +38,7 @@ export class HomeComponent implements OnInit {
       nextIndex = index - 1 >= 0 ? index - 1 : arrayNavigation.length - 1;
     }
     this.activeTab = nextIndex;
+    this.setIndexTab(nextIndex);
   }
   callShowGalerry({ status, index }) {
     this.isShowGallery = status;
