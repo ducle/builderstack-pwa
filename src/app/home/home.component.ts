@@ -1,4 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { ActivatedRoute, ParamMap } from '@angular/router';
+import 'rxjs/add/operator/switchMap';
 import { CardService } from '../services/card.service';
 import { SwiperDirective } from 'ngx-swiper-wrapper';
 
@@ -23,13 +25,16 @@ export class HomeComponent implements OnInit {
   images = imageArray;
   imageGalleryIndex = 0;
   config = null;
+  cardData = {};
   @ViewChild(SwiperDirective) directiveRef: SwiperDirective;
-  constructor(private cardService: CardService) {}
+  constructor(private cardService: CardService, private route: ActivatedRoute) {}
 
   ngOnInit() {
-    // this.cardService.getCard().subscribe(response => {
-    //   console.log('response', response);
-    // });
+    this.route.paramMap
+      .switchMap((params: ParamMap) => this.cardService.getCard(+params.get('id')))
+      .subscribe(card => {
+        this.cardData = card;
+      });
   }
   navigatonSection(next = true) {
     const index = this.activeTab;

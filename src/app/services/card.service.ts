@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-const API_URL = 'https://www.buildstacks.com/wp-json/restApi/v1/';
+const API_URL = 'https://api-buildstacks.herokuapp.com/api/cards/';
 @Injectable()
 export class CardService {
   constructor(private http: HttpClient) {}
-  getCard() {
-    const url = API_URL + 'usercards/';
-    return this.http.post(url, { user: 627 }).map(response => {
+  getCard(index = 1) {
+    const url = API_URL + index;
+    return this.http.get(url).map(response => {
       return response;
     });
   }

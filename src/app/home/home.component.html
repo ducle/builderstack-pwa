@@ -24,7 +24,7 @@
     <div class="swiper-container" [swiper]="config" (indexChange)="changeIndexTab($event)"  >
       <div class="swiper-wrapper">
         <div class="swiper-slide">
-          <app-home-card class="fade"></app-home-card>
+          <app-home-card [card]="cardData" class="fade"></app-home-card>
         </div>
         <div class="swiper-slide">
           <app-home-photo [images]="images" (callShowGalerry)="callShowGalerry($event)" class="fade"></app-home-photo>

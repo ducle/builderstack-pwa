@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
+  { path: 'card/:id', component: HomeComponent },
 ];
 
 @NgModule({
