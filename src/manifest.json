@@ -1,7 +1,7 @@
 {
   "short_name": "Build Stacks",
   "name": "Build Stacks",
-  "start_url": "/",
+  "start_url": ".",
   "theme_color": "#262C46",
   "background_color": "#262C46",
   "display": "standalone",
