@@ -1,3 +1,4 @@
+@import '../../gb-mixins';
 .box-profile {
   padding: 20px;
   .image-avatar {
@@ -5,18 +6,24 @@
     height: 90px;
   }
   .box-profile-info {
+    color: $main_text;
     .profile-name {
       text-transform: uppercase;
-      font-family: 'Avenierheavy';
-      .agent {
-        border: 1px #f9307a solid;
-        font-size: 70%;
-        padding: 5px;
-        margin-left: 5px;
-      }
+      font-family: 'Avenirblack';
+      font-size: 120%;
+    }
+    .agent {
+      font-family: 'Avenirbook';
+      border: 1px $colorAccent solid;
+      color: $colorAccent;
+      text-transform: uppercase;
+      font-size: 70%;
+      padding: 4px;
+      margin-left: 5px;
+      margin-top: -5px;
     }
     .icon {
-      width: 20px;
+      width: 15px;
       height: auto;
       margin-right: 5px;
     }
@@ -24,6 +31,12 @@
 }
 .button-send {
   background-color: #f9307a;
-  color: #eeeeee;
+  color: white;
   text-transform: uppercase;
+  font-family: 'Avenirheavy'
+}
+.contact-agent {
+  font-family: 'Avenirblack';
+  text-transform: uppercase;
+  font-size: 90%;
 }
