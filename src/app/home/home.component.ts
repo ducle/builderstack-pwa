@@ -4,7 +4,7 @@ import 'rxjs/add/operator/switchMap';
 import { CardService } from '../services/card.service';
 import { SwiperDirective } from 'ngx-swiper-wrapper';
 
-const arrayNavigation = [0, 1, 2, 3, 4, 5];
+const arrayNavigation = [0, 1, 2, 3, 4];
 const imageArray = [
   'assets/images/one.jpg',
   'assets/images/two.jpg',
@@ -38,12 +38,9 @@ export class HomeComponent implements OnInit {
   }
   navigatonSection(next = true) {
     const index = this.activeTab;
-    let nextIndex = arrayNavigation.length > index + 1 ? index + 1 : 0;
-    if (!next) {
-      nextIndex = index - 1 >= 0 ? index - 1 : arrayNavigation.length - 1;
-    }
+    const nextIndex = arrayNavigation.length > index + 1 ? index + 1 : 0;
     this.activeTab = nextIndex;
-    this.setIndexTab(nextIndex);
+    this.directiveRef.nextSlide();
   }
   callShowGalerry({ status, index }) {
     this.isShowGallery = status;
