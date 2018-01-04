@@ -1,6 +1,6 @@
 <div class="d-md-none container-app">
   <div class="container-header fixed-top">
-    <div (click)="activeTab = 0; setIndexTab(0)">
+    <div [ngClass]="{'active': activeTab === 0}" (click)="activeTab = 0; setIndexTab(0)">
       <h3>
         425 Mapple
       </h3>
@@ -24,27 +24,27 @@
     <div class="swiper-container" [swiper]="config" (indexChange)="changeIndexTab($event)"  >
       <div class="swiper-wrapper">
         <div class="swiper-slide">
-          <app-home-card [card]="cardData" class="fade"></app-home-card>
+          <app-home-card [card]="cardData"></app-home-card>
         </div>
         <div class="swiper-slide">
-          <app-home-photo [images]="images" (callShowGalerry)="callShowGalerry($event)" class="fade"></app-home-photo>
+          <app-home-photo [images]="images" (callShowGalerry)="callShowGalerry($event)"></app-home-photo>
         </div>
         <div class="swiper-slide">
-          <app-home-features class="fade"></app-home-features>
+          <app-home-features></app-home-features>
         </div>
         <div class="swiper-slide">
-          <app-home-map class="fade"></app-home-map>
+          <app-home-map></app-home-map>
         </div>
         <div class="swiper-slide">
-          <app-home-contact class="fade"></app-home-contact>
+          <app-home-contact></app-home-contact>
         </div>
       </div>
     </div>
     <div class="fixed-bottom">
       <div class="container-footer">
-        <span (click)="activeTab = 4">
+        <span class="text" (click)="activeTab = 4">
           <img src="assets/images/ic_calendar.png">Schedule tour</span>
-        <button class="float-right btn button-navigation rounded-circle" (click)="navigatonSection()">
+        <button class="btn button-navigation rounded-circle" (click)="navigatonSection()">
           <i class="fa fa-angle-down"></i>
         </button>
       </div>

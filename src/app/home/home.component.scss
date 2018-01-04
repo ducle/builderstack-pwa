@@ -1,45 +1,66 @@
+@import '../../gb-mixins';
 .container-app {
-  padding-top: 80px;
-  padding-bottom: 50px;
+  padding-top: $height_header;
+  padding-bottom: $height_footer;
   .container-header {
     background-color: #eeeeee;
   }
 }
 .container-header {
   padding: 10px;
-  height: 80px;
+  height: $height_header;
   text-align: center;
   color: #697098;
-}
-.tab-menu {
-  .col-3 {
-    font-family: 'Avenirheavy';
-    margin-bottom: 5px;
+  .active {
+    color: $colorAccent;
   }
-  .activeTab {
-    border-bottom: 5px #f9307a solid;
+  h3 {
+    margin-top: 10px;
+    font-family: 'Avenirmedium';
+    letter-spacing: 0.11px;
+    font-size: 1.286rem;
+  }
+  .tab-menu {
+    text-transform: uppercase;
+    margin-top: 14px;
+    color: rgba(0, 0, 0, 0.98);
+    .col-3 {
+      font-family: 'Avenirmedium';
+      font-weight: bold;
+    }
+    .activeTab {
+      border-bottom: 3px $colorAccent solid;
+    }
   }
 }
 
 .container-footer {
-  padding: 10px;
   padding-left: 20px;
   text-transform: uppercase;
   background-color: #eeeeee;
-  height: 50px;
-  color: #697098;
+  height: $height_footer;
+  color: $colorAccent;
+  display: flex;
+  align-items: center;
   img {
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     margin-right: 20px;
   }
   .button-navigation {
-    margin-top: -20px;
+    position: absolute;
+    top: -5px;
+    right: 20px;
     width: 45px;
     height: 45px;
-    background-color: #f9307a;
-    font-size: 150%;
+    background-color: $colorAccent;
+    font-size: 200%;
     color: #eeeeee;
+  }
+  .text {
+    font-family: 'Avenirheavy';
+    display: flex;
+    align-items: center;
   }
 }
 

@@ -1,7 +1,7 @@
 <img src="assets/images/big_house.jpg" alt="First slide" style="display: block; width: 100%; height: 200px;">
 <div class="content-wrapper">
   <div class="box-price">
-    <h4>$699,999</h4>
+    <span class="price">$699,999</span>
   </div>
   <div class="box-info">
     <div class="box-info-address">
@@ -30,9 +30,9 @@
     </div>
   </div>
   <div class="box-description">
-    <h4>Desctiption</h4>
+    <span class="description">Desctiption</span>
     <p>
-      {{card.description ||'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'}}
+      {{'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' + card.description}}
     </p>
   </div>
 </div>
