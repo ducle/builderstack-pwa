@@ -1,0 +1,24 @@
+@import '../../gb-mixins';
+.box-info {
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 95%;
+    .box-info-address {
+      text-align: center;
+      color: $main_text;
+      .icon-map {
+        margin-right: 5px;
+        width: 15px;
+      }
+    }
+    .box-first {
+      text-transform: uppercase;
+      border-bottom: 1px $color_dadada solid;
+    }
+    .item {
+      display: flex;
+      justify-content: center;
+      color: $main_transparent;
+      font-family: 'Avenirmedium';
+    }
+  }

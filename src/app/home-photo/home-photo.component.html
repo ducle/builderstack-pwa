@@ -1,24 +1,5 @@
 <div class="container">
-  <div class="box-info">
-    <div class="box-info-address">
-      <span>
-        <img class="icon-map" src="assets/images/ic_location_black.png" />425 N Mapple Driver, New york NY 555555</span>
-    </div>
-    <div class="row box-first">
-      <div class="col-3 item p-2">
-        $699,000
-      </div>
-      <div class="col-3 item p-2">
-        <span>3 BED</span>
-      </div>
-      <div class="col-3 item p-2">
-        2 BATH
-      </div>
-      <div class="col-3 item p-2">
-        2,276 SQ/FT
-      </div>
-    </div>
-  </div>
+  <app-header-general-info></app-header-general-info>
   <div class="row box-gallery">
     <div class="col-6 item" *ngFor="let image of images; let index = index">
       <img class="img-fluid image-gallery" src={{image}} (click)=" callShowGalerry.emit({status: true, index: index});" />

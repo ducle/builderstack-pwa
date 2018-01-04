@@ -18,6 +18,7 @@ import { HomeFeaturesComponent } from './home-features/home-features.component';
 import { HomeMapComponent } from './home-map/home-map.component';
 import { HomeContactComponent } from './home-contact/home-contact.component';
 import { environment } from '../environments/environment';
+import { HeaderGeneralInfoComponent } from './header-general-info/header-general-info.component';
 
 export class MyHammerConfig extends HammerGestureConfig {
   overrides = <any>{
@@ -38,7 +39,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     HomeCardComponent,
     HomeFeaturesComponent,
     HomeMapComponent,
-    HomeContactComponent
+    HomeContactComponent,
+    HeaderGeneralInfoComponent
   ],
   imports: [
     BrowserModule,
