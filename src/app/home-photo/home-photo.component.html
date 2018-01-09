@@ -1,7 +1,7 @@
 <div class="container">
   <app-header-general-info></app-header-general-info>
   <div class="row box-gallery">
-    <div class="col-6 item" *ngFor="let image of images; let index = index">
+    <div class="col-6 item" [ngClass]="index%2 === 0 ? 'text-right': 'text-left'" *ngFor="let image of images; let index = index">
       <img class="img-fluid image-gallery" src={{image}} (click)=" callShowGalerry.emit({status: true, index: index});" />
     </div>
   </div>
