@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import 'rxjs/add/operator/switchMap';
 import { CardService } from '../services/card.service';
@@ -18,7 +18,7 @@ const imageArray = [
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, AfterViewInit {
   activeTab = 0;
   isShowGallery = false;
   SWIPE_ACTION = { LEFT: 'swipeleft', RIGHT: 'swiperight' };
@@ -30,11 +30,13 @@ export class HomeComponent implements OnInit {
   constructor(private cardService: CardService, private route: ActivatedRoute) {}
 
   ngOnInit() {
-    this.route.paramMap
-      .switchMap((params: ParamMap) => this.cardService.getCard(+params.get('id')))
-      .subscribe(card => {
-        this.cardData = card;
-      });
+    this.route.paramMap.switchMap((params: ParamMap) => this.cardService.getCard(+params.get('id'))).subscribe(card => {
+      this.cardData = card;
+    });
+  }
+  ngAfterViewInit() {
+    this.directiveRef.config = { loop: true };
+    this.directiveRef.update();
   }
   navigatonSection(next = true) {
     const index = this.activeTab;
