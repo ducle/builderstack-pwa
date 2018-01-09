@@ -30,6 +30,7 @@
     }
     .activeTab {
       border-bottom: 3px $colorAccent solid;
+      color: $colorAccent;
     }
   }
 }
