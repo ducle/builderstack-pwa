@@ -1,27 +1,27 @@
 <div class="d-md-none container-app">
   <div class="container-header fixed-top">
-    <div [ngClass]="{'active': activeTab === 0}" (click)="activeTab = 0; setIndexTab(0)">
+    <div [ngClass]="{'active': activeTab === 0}" (click)="activeTab = 0">
       <h3>
         425 Maple
       </h3>
     </div>
     <div class="row tab-menu">
-      <div class="col-3" [ngClass]="{'activeTab': activeTab === 1}" (click)="activeTab = 1; setIndexTab(1)">
+      <div class="col-3" [ngClass]="{'activeTab': activeTab === 1}" (click)="activeTab = 1">
         <span>Photos</span>
       </div>
-      <div class="col-3" [ngClass]="{'activeTab': activeTab === 2}" (click)="activeTab = 2; setIndexTab(2)">
+      <div class="col-3" [ngClass]="{'activeTab': activeTab === 2}" (click)="activeTab = 2">
         <span>Features</span>
       </div>
-      <div class="col-3" [ngClass]="{'activeTab': activeTab === 3}" (click)="activeTab = 3; setIndexTab(3)">
+      <div class="col-3" [ngClass]="{'activeTab': activeTab === 3}" (click)="activeTab = 3">
         <span>Map</span>
       </div>
-      <div class="col-3" [ngClass]="{'activeTab': activeTab === 4}" (click)="activeTab = 4; setIndexTab(4)">
+      <div class="col-3" [ngClass]="{'activeTab': activeTab === 4}" (click)="activeTab = 4">
         <span>Contact</span>
       </div>
     </div>
   </div>
   <div class="content-body">
-    <div class="swiper-container" [swiper]="config" (indexChange)="changeIndexTab($event)"  >
+    <div class="swiper-container" [swiper]="config" [index]="activeTab" (indexChange)="changeIndexTab($event)"  >
       <div class="swiper-wrapper">
         <div class="swiper-slide">
           <app-home-card [card]="cardData"></app-home-card>
