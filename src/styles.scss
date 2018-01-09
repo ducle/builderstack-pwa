@@ -27,9 +27,6 @@ body {
   color: #eeeeee;
   font-size: 13px;
 }
-.swiper-container {
-  height: calc(100vh - #{$height_screen_used});
-}
 .schedule-footer {
   width: 100%;
   text-align: center;
@@ -42,4 +39,7 @@ body {
     text-align: center;
     color: $main_transparent;
   }
+}
+.swiper-pagination-bullet {
+  background-color: white !important;
 }

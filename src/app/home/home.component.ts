@@ -61,4 +61,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   setIndexTab(index) {
     this.directiveRef.setIndex(index);
   }
+  callCloseGallery () {
+    this.isShowGallery = false;
+  }
 }
