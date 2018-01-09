@@ -44,7 +44,9 @@ agm-map {
 }
 .box-near-by {
   color: $main-text;
+  line-height: 200%;
   .box-near-by-header {
-    font-family: 'Avenirheavy'
+    font-family: 'Avenirheavy';
+    text-transform: uppercase;
   }
 }
