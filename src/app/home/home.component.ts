@@ -26,6 +26,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   imageGalleryIndex = 0;
   config = null;
   cardData = {};
+  setNewHeight = false;
   @ViewChild(SwiperDirective) directiveRef: SwiperDirective;
   constructor(private cardService: CardService, private route: ActivatedRoute) {}
 
@@ -61,7 +62,17 @@ export class HomeComponent implements OnInit, AfterViewInit {
   setIndexTab(index) {
     this.directiveRef.setIndex(index);
   }
-  callCloseGallery () {
+  callCloseGallery() {
     this.isShowGallery = false;
+  }
+  focusedInput() {
+    this.setNewHeight = true;
+    this.directiveRef.update();
+    console.log('focused input');
+  }
+  focusedInputOut() {
+    this.setNewHeight = false;
+    this.directiveRef.update();
+    console.log('focused out');
   }
 }

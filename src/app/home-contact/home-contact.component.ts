@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-home-contact',
@@ -6,10 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home-contact.component.scss']
 })
 export class HomeContactComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  @Output() focusedInput = new EventEmitter();
+  @Output() focusedInputOut = new EventEmitter();
+  constructor() {}
+  ngOnInit() {}
 }

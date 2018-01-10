@@ -21,7 +21,7 @@
     </div>
   </div>
   <div class="content-body">
-    <div class="swiper-container main-swiper-container" [swiper]="config" (indexChange)="changeIndexTab($event)">
+    <div class="swiper-container main-swiper-container" [ngClass]="{'swiper-container-input': setNewHeight}" [swiper]="config" (indexChange)="changeIndexTab($event)">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
           <app-home-card [card]="cardData"></app-home-card>
@@ -36,7 +36,7 @@
           <app-home-map></app-home-map>
         </div>
         <div class="swiper-slide">
-          <app-home-contact></app-home-contact>
+          <app-home-contact (focusedInput)="focusedInput()" (focusedInputOut)="focusedInputOut()"></app-home-contact>
         </div>
       </div>
     </div>
