@@ -1,13 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AgmCoreModule } from '@agm/core';
-import * as Hammer from 'hammerjs';
 import { BoostrapModule } from './shared/boostrap.module';
 import { HttpClientModule } from '@angular/common/http';
 import { CardService } from './services/card.service';
 
 import { ServiceWorkerModule } from '@angular/service-worker';
-import { HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 import { SwiperModule, SWIPER_CONFIG, SwiperConfigInterface } from 'ngx-swiper-wrapper';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -21,11 +19,6 @@ import { environment } from '../environments/environment';
 import { HeaderGeneralInfoComponent } from './header-general-info/header-general-info.component';
 import { HomePhotoGalleryComponent } from './home-photo-gallery/home-photo-gallery.component';
 
-export class MyHammerConfig extends HammerGestureConfig {
-  overrides = <any>{
-    swipe: { velocity: 0.4, threshold: 20, direction: Hammer.DIRECTION_ALL } // override default settings
-  };
-}
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'vertical',
   slidesPerView: 1
@@ -56,10 +49,6 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   ],
   providers: [
     CardService,
-    {
-      provide: HAMMER_GESTURE_CONFIG,
-      useClass: MyHammerConfig
-    },
     {
       provide: SWIPER_CONFIG,
       useValue: DEFAULT_SWIPER_CONFIG
