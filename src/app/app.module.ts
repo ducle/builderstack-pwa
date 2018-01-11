@@ -21,7 +21,8 @@ import { HomePhotoGalleryComponent } from './home-photo-gallery/home-photo-galle
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'vertical',
-  slidesPerView: 1
+  slidesPerView: 1,
+  threshold: 100
 };
 
 @NgModule({
