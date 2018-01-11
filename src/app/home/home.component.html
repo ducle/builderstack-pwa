@@ -40,7 +40,7 @@
         </div>
       </div>
     </div>
-    <div class="fixed-bottom">
+    <div *ngIf="!setNewHeight" class="fixed-bottom">
       <div class="container-footer">
         <span class="text" (click)="activeTab = 4; setIndexTab(4)">
           <img src="assets/images/ic_calendar.png">Schedule tour</span>
