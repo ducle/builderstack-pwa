@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit, HostListener } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import 'rxjs/add/operator/switchMap';
 import { CardService } from '../services/card.service';
@@ -28,6 +28,12 @@ export class HomeComponent implements OnInit, AfterViewInit {
   cardData = {};
   setNewHeight = false;
   @ViewChild(SwiperDirective) directiveRef: SwiperDirective;
+  @HostListener('window:resize')
+  onResize() {
+    if (window.innerHeight > 400 && this.setNewHeight) {
+      this.focusedInputOut();
+    }
+  }
   constructor(private cardService: CardService, private route: ActivatedRoute) {}
 
   ngOnInit() {
@@ -57,6 +63,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
     }
   }
   changeIndexTab(event) {
+    if (event !== 4) {
+      this.setNewHeight = false;
+    }
     this.activeTab = event;
   }
   setIndexTab(index) {
@@ -68,11 +77,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
   focusedInput() {
     this.setNewHeight = true;
     this.directiveRef.update();
-    console.log('focused input');
   }
   focusedInputOut() {
     this.setNewHeight = false;
-    this.directiveRef.update();
-    console.log('focused out');
+    //this.directiveRef.update();
   }
 }
