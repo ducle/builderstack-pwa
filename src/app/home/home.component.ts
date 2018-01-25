@@ -21,7 +21,6 @@ const imageArray = [
 export class HomeComponent implements OnInit, AfterViewInit {
   activeTab = 0;
   isShowGallery = false;
-  SWIPE_ACTION = { LEFT: 'swipeleft', RIGHT: 'swiperight' };
   images = imageArray;
   imageGalleryIndex = 0;
   config = null;
@@ -71,13 +70,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
   callShowGalerry({ status, index }) {
     this.isShowGallery = status;
     this.imageGalleryIndex = index;
-  }
-  swipe(type) {
-    if (type === 'swipeleft') {
-      this.imageGalleryIndex = this.imageGalleryIndex - 1 >= 0 ? this.imageGalleryIndex - 1 : imageArray.length - 1;
-    } else {
-      this.imageGalleryIndex = this.imageGalleryIndex + 1 >= imageArray.length ? 0 : this.imageGalleryIndex + 1;
-    }
   }
   changeIndexTab(event) {
     if (event !== 4) {
