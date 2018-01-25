@@ -3991,11 +3991,11 @@ ngx-bootstrap@^2.0.0-rc.0:
   version "2.0.0-rc.0"
   resolved "https://registry.yarnpkg.com/ngx-bootstrap/-/ngx-bootstrap-2.0.0-rc.0.tgz#c423117f9a3b36a19514c531b7fd9a56217f060e"
 
-ngx-swiper-wrapper@^5.2.0:
-  version "5.2.0"
-  resolved "https://registry.yarnpkg.com/ngx-swiper-wrapper/-/ngx-swiper-wrapper-5.2.0.tgz#c4676e4dd1dffa1cc98f4c9d0e402597605ffb50"
+ngx-swiper-wrapper@^5.3.1:
+  version "5.3.1"
+  resolved "https://registry.yarnpkg.com/ngx-swiper-wrapper/-/ngx-swiper-wrapper-5.3.1.tgz#1a779e5d783eac9bf6134e848f7fbf78813577bc"
   dependencies:
-    swiper "^4.0.0"
+    swiper "^4.1.0"
 
 no-case@^2.2.0:
   version "2.3.2"
@@ -5925,9 +5925,9 @@ svgo@^0.7.0:
     sax "~1.2.1"
     whet.extend "~0.9.9"
 
-swiper@^4.0.0:
-  version "4.0.7"
-  resolved "https://registry.yarnpkg.com/swiper/-/swiper-4.0.7.tgz#89175c2a23d86622eda8344740c24a3701a6b270"
+swiper@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/swiper/-/swiper-4.1.0.tgz#3d1d97aef948366b8b36fa90d41dcedf5432c88c"
   dependencies:
     dom7 "^2.0.1"
 
