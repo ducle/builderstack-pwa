@@ -3,8 +3,9 @@ import { NgModule } from '@angular/core';
 import { AgmCoreModule } from '@agm/core';
 import { BoostrapModule } from './shared/boostrap.module';
 import { HttpClientModule } from '@angular/common/http';
-import { CardService } from './services/card.service';
 
+import { AngularFireModule } from 'angularfire2';
+import {AngularFireDatabaseModule} from 'angularfire2/database-deprecated';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { SwiperModule, SWIPER_CONFIG, SwiperConfigInterface } from 'ngx-swiper-wrapper';
 import { AppComponent } from './app.component';
@@ -18,6 +19,10 @@ import { HomeContactComponent } from './home-contact/home-contact.component';
 import { environment } from '../environments/environment';
 import { HeaderGeneralInfoComponent } from './header-general-info/header-general-info.component';
 import { HomePhotoGalleryComponent } from './home-photo-gallery/home-photo-gallery.component';
+import { CardService } from './services/card.service';
+import { RemovesrcPipe } from './pipes/removesrc.pipe';
+import { FormatTimePipe } from './pipes/format-time.pipe';
+import { YearPipe } from './pipes/year.pipe';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'vertical',
@@ -35,7 +40,10 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     HomeMapComponent,
     HomeContactComponent,
     HeaderGeneralInfoComponent,
-    HomePhotoGalleryComponent
+    HomePhotoGalleryComponent,
+    RemovesrcPipe,
+    FormatTimePipe,
+    YearPipe
   ],
   imports: [
     BrowserModule,
@@ -46,7 +54,9 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     }),
     HttpClientModule,
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
-    SwiperModule
+    SwiperModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule
   ],
   providers: [
     CardService,

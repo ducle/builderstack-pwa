@@ -5,7 +5,7 @@
   <div class="box-info">
     <div class="box-info-address">
       <span>
-        <img class="icon-map" src="assets/images/ic_new_location.png" />425 N Mapple Driver, New york NY 555555</span>
+        <img class="icon-map" src="assets/images/ic_new_location.png" />{{mapData.Address}}</span>
     </div>
     <div class="box-info-direction">
       Get Direction
@@ -29,26 +29,26 @@
   <div class="row box-near-by">
     <div class="col-6">
       <span class="box-near-by-header">Nearby Schools</span>
-      <br /> Country Isles Elementary
-      <br /> Indian Ridge Middle
-      <br /> Western High
+      <br /> {{mapData.ElementarySchool}}
+      <br /> {{mapData.MiddleSchool}}
+      <br /> {{mapData.HighSchool}}
       <br />
     </div>
     <div class="col-3 text-center">
       <span class="box-near-by-header">Grades</span>
-      <br /> K-5
-      <br /> 6-8
-      <br /> 9-12
+      <br /> {{mapData.ElementarySchoolDistanceGrade}}
+      <br /> {{mapData.MiddleSchoolDistanceGrade}}
+      <br /> {{mapData.HighSchoolDistanceGrade}}
     </div>
     <div class="col-3">
       <span class="box-near-by-header">Distance</span>
-      <br /> 0.3 miles
-      <br /> 0.8 miles
-      <br /> 2 miles
+      <br /> {{mapData.ElementarySchoolDistance}} miles
+      <br /> {{mapData.MiddleSchoolDistance}} miles
+      <br /> {{mapData.HighSchoolDistance}} miles
       <br />
     </div>
   </div>
 </div>
 <div class="schedule-footer">
-  <h3>open house mon, Jun 12 at 3:00 PM</h3>
+  <h3>open house {{mapData.timing | formatTime}}</h3>
 </div>

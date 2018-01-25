@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
   selector: 'app-home-contact',
@@ -8,6 +8,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 export class HomeContactComponent implements OnInit {
   @Output() focusedInput = new EventEmitter();
   @Output() focusedInputOut = new EventEmitter();
+  @Input() contactData: any = {};
   constructor() {}
   ngOnInit() {}
 }

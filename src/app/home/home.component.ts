@@ -25,8 +25,13 @@ export class HomeComponent implements OnInit, AfterViewInit {
   images = imageArray;
   imageGalleryIndex = 0;
   config = null;
-  cardData = {};
+  homeData: any = {};
+  photoData: any = {};
+  featureData: any = {};
+  mapData: any = {};
+  contactData: any = {};
   setNewHeight = false;
+  hideForNoData = true;
   @ViewChild(SwiperDirective) directiveRef: SwiperDirective;
   @HostListener('window:resize')
   onResize() {
@@ -38,12 +43,24 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     this.route.paramMap.switchMap((params: ParamMap) => this.cardService.getCard(+params.get('id'))).subscribe(card => {
-      this.cardData = card;
+      if (!card.length) {
+        this.hideForNoData = true;
+      } else {
+        this.hideForNoData = false;
+        this.homeData = card[0];
+        this.photoData = card[1];
+        this.featureData = card[2];
+        this.mapData = card[3];
+        this.contactData = card[4];
+        this.contactData.timing = this.homeData.timing;
+      }
     });
   }
   ngAfterViewInit() {
-    this.directiveRef.config = { loop: true };
-    this.directiveRef.update();
+    if (this.directiveRef) {
+      this.directiveRef.config = { loop: true };
+      this.directiveRef.update();
+    }
   }
   navigatonSection(next = true) {
     const index = this.activeTab;
@@ -80,6 +97,5 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
   focusedInputOut() {
     this.setNewHeight = false;
-    //this.directiveRef.update();
   }
 }

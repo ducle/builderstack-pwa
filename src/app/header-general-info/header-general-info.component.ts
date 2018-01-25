@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-header-general-info',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header-general-info.component.scss']
 })
 export class HeaderGeneralInfoComponent implements OnInit {
-
+  @Input() data: any = {};
   constructor() { }
 
   ngOnInit() {

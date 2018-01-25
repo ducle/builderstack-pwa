@@ -1,15 +1,21 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, OnChanges } from '@angular/core';
 
 @Component({
   selector: 'app-home-photo',
   templateUrl: './home-photo.component.html',
   styleUrls: ['./home-photo.component.scss']
 })
-export class HomePhotoComponent implements OnInit {
+export class HomePhotoComponent implements OnInit, OnChanges {
   myInterval = 0;
-  @Input() images: any;
+  @Input() photoData: any;
   @Output() callShowGalerry = new EventEmitter();
+  images = [];
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.images = this.photoData.cardImages;
+  }
+  ngOnChanges() {
+    this.images = this.photoData.cardImages;
+  }
 }

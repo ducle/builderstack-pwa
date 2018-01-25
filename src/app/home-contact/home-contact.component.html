@@ -1,19 +1,19 @@
 <div class="container">
   <div class="row box-profile">
     <div class="col-4">
-      <img class="image-avatar rounded-circle" src="assets/images/christian_bale.jpg" />
+      <img class="image-avatar rounded-circle" src="{{contactData.image}}" />
     </div>
     <div class="box-profile-info col-8">
-      <span class="profile-name">John Doe</span>
+      <span class="profile-name">{{contactData.RealtorName}}</span>
       <span class="agent">Agent</span>
       <br/>
       <span>United Realty Group</span>
       <br/>
       <span>
-        <img class="icon" src="assets/images/ic_contact_phone.png" />555-555-5555</span>
+        <img class="icon" src="assets/images/ic_contact_phone.png" />{{contactData.userPhone}}</span>
       <br/>
       <span>
-        <img class="icon" src="assets/images/ic_contact_mail.png" />johndoe@unitedrealty.com</span>
+        <img class="icon" src="assets/images/ic_contact_mail.png" />{{contactData.userEmail}}</span>
       <br/>
     </div>
   </div>
@@ -35,5 +35,5 @@
   </form>
 </div>
 <div class="schedule-footer">
-  <h3>open house mon, Jun 12 at 3:00 PM</h3>
+  <h3>open house {{contactData.timing | formatTime}}</h3>
 </div>

@@ -7,7 +7,7 @@
   <div class="gallery-slider-container">
     <swiper class="swiper-container" [index]="indexImage" [config]="config">
       <div *ngFor="let image of images" class="swiper-slide">
-        <img src={{image}} alt="Slide Image" class="img-fluid image-slide">
+        <img src={{image|removesrc}} alt="Slide Image" class="img-fluid image-slide">
       </div>
     </swiper>
   </div>

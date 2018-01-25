@@ -1,8 +1,8 @@
-<div class="d-md-none container-app">
+<div *ngIf="!hideForNoData" class="d-md-none container-app">
   <div class="container-header fixed-top">
     <div [ngClass]="{'active': activeTab === 0}" (click)="activeTab = 0; setIndexTab(0)">
       <h3>
-        425 Maple
+        {{homeData.title}}
       </h3>
     </div>
     <div class="row tab-menu">
@@ -24,19 +24,19 @@
     <div class="swiper-container main-swiper-container" [ngClass]="{'swiper-container-input': setNewHeight}" [swiper]="config" (indexChange)="changeIndexTab($event)">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
-          <app-home-card [card]="cardData"></app-home-card>
+          <app-home-card [card]="homeData"></app-home-card>
         </div>
         <div class="swiper-slide">
-          <app-home-photo [images]="images" (callShowGalerry)="callShowGalerry($event)"></app-home-photo>
+          <app-home-photo [photoData]="photoData" (callShowGalerry)="callShowGalerry($event)"></app-home-photo>
         </div>
         <div class="swiper-slide">
-          <app-home-features></app-home-features>
+          <app-home-features [featureData]="featureData"></app-home-features>
         </div>
         <div class="swiper-slide">
-          <app-home-map></app-home-map>
+          <app-home-map [mapData]="mapData"></app-home-map>
         </div>
         <div class="swiper-slide">
-          <app-home-contact (focusedInput)="focusedInput()" (focusedInputOut)="focusedInputOut()"></app-home-contact>
+          <app-home-contact [contactData]="contactData" (focusedInput)="focusedInput()" (focusedInputOut)="focusedInputOut()"></app-home-contact>
         </div>
       </div>
     </div>
@@ -51,5 +51,5 @@
     </div>
 
   </div>
-  <app-home-photo-gallery [images]="images" [indexImage]="imageGalleryIndex" *ngIf="isShowGallery" (callCloseGallery)="callCloseGallery($event)"></app-home-photo-gallery>
+  <app-home-photo-gallery [images]="photoData.cardImages" [indexImage]="imageGalleryIndex" *ngIf="isShowGallery" (callCloseGallery)="callCloseGallery($event)"></app-home-photo-gallery>
 </div>
