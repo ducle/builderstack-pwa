@@ -7,7 +7,7 @@ import {
 
 @Injectable()
 export class CardService {
-  private dbPath = 'Cards/Cards';
+  private dbPath = 'Cards';
   card: FirebaseObjectObservable<any> = null;
   cards: FirebaseListObservable<any[]> = null;
   constructor(private db: AngularFireDatabase) {}
