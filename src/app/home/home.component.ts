@@ -65,7 +65,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     const index = this.activeTab;
     const nextIndex = arrayNavigation.length > index + 1 ? index + 1 : 0;
     this.activeTab = nextIndex;
-    this.directiveRef.nextSlide();
+    this.directiveRef.setIndex(nextIndex);
   }
   callShowGalerry({ status, index }) {
     this.isShowGallery = status;
