@@ -27,7 +27,6 @@ import { YearPipe } from './pipes/year.pipe';
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'vertical',
   slidesPerView: 1,
-  threshold: 100,
   loop: true
 };
 
