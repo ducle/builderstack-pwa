@@ -13,9 +13,11 @@ export class HomePhotoComponent implements OnInit, OnChanges {
   constructor() {}
 
   ngOnInit() {
-    this.images = this.photoData.cardImages;
+    const images = this.photoData.cardImages || []
+    this.images = images.slice(0,6);
   }
   ngOnChanges() {
-    this.images = this.photoData.cardImages;
+    const images = this.photoData.cardImages || []
+    this.images = images.slice(0,6);
   }
 }
