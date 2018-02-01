@@ -25,8 +25,8 @@ app.listen(process.env.PORT || 3001);
 app.get('/manifest.json', function(req, res) {
   const start_url = req.query.id ? '/card/'+req.query.id : '.';
   res.send(`{
-      "short_name": "Build Stacks",
-      "name": "Build Stacks",
+      "short_name": "Card ${req.query.id}",
+      "name": "Card ${req.query.id}",
       "start_url": "${start_url}",
       "theme_color": "#262C46",
       "background_color": "#262C46",
