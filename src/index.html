@@ -21,6 +21,11 @@
       Sorry, JavaScript must be enabled to use this app
     </p>
   </noscript>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/ngsw-worker.js', { scope: './{card-id}/' });
+    }
+  </script>
 </body>
 
 </html>

@@ -18,12 +18,11 @@ const forceSSL = function() {
 // middleware
 app.use(forceSSL());
 
-
 // Start the app by listening on the default
 // Heroku port
 app.listen(process.env.PORT || 3001);
 app.get('/card/:id/manifest.json', function(req, res) {
-  const start_url = req.params.id ? '/card/'+req.params.id : '.';
+  const start_url = req.params.id ? '/card/' + req.params.id : '.';
   res.send(`{
       "short_name": "Card ${req.params.id}",
       "name": "Card ${req.params.id}",
@@ -42,10 +41,12 @@ app.get('/card/:id/manifest.json', function(req, res) {
     }
     `);
 });
-const htmlFile = fs.readFileSync(__dirname+'/dist/index.html', 'utf8');
+const htmlFile = fs.readFileSync(__dirname + '/dist/index.html', 'utf8');
 app.use(express.static(__dirname + '/dist'));
 app.get('/card/:id', function(req, res) {
-  res.send(htmlFile.replace('manifest.json','card/'+req.params.id+'/manifest.json'));
+  res.send(
+    htmlFile.replace('manifest.json', 'card/' + req.params.id + '/manifest.json').replace('{card-id}', 'card/' + req.params.id)
+  );
 });
 
 app.get('/*', function(req, res) {
