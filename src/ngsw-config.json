@@ -27,17 +27,5 @@
       "https://cdnjs.cloudflare.com/**"
     ]
     }
-  }],
-  "dataGroups": [{
-    "name": "api-freshness",
-    "urls": [
-      "/card"
-    ],
-    "cacheConfig": {
-      "maxSize": 100,
-      "maxAge": "1h",
-      "timeout": "10s",
-      "strategy": "freshness"
-    }
   }]
 }
