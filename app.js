@@ -44,12 +44,12 @@ app.get('/card/:id/manifest.json', function(req, res) {
 const htmlFile = fs.readFileSync(__dirname + '/dist/index.html', 'utf8');
 app.use(express.static(__dirname + '/dist'));
 app.get('/card/:id', function(req, res) {
-  const newService = `service-worker.js?${Math.random()}`;
+  const newService = `ngsw-worker.js?${Math.random()}`;
   res.send(
     htmlFile
       .replace('manifest.json', 'card/' + req.params.id + '/manifest.json')
       .replace('{card-id}', 'card/' + req.params.id)
-      .replace('service-worker.js', newService)
+      .replace('ngsw-worker.js', newService)
   );
 });
 
